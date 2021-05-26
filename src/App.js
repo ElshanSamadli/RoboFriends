@@ -1,7 +1,8 @@
 import React from 'react';
 import CardList from './CardList';
-import {robots} from './robots';
+// import {robots} from './robots'; no needed after fetching user data
 import SearchBox from './SearchBox';
+import Scroll from './Scroll';
 
 
 class App extends React.Component {
@@ -34,7 +35,9 @@ class App extends React.Component {
             <div className="tc">
                 <h1 className='f1'>Robofriends</h1>
                 <SearchBox searchChange ={this.onSearchChange}/>
-                <CardList robots={filteredRobots}/>
+                <Scroll>
+                    <CardList robots={filteredRobots}/>
+                </Scroll>
             </div>
         )
     }
