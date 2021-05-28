@@ -3,7 +3,7 @@ import CardList from '../Components /CardList';
 // import {robots} from './robots'; no needed after fetching user data
 import SearchBox from '../Components /SearchBox';
 import Scroll from '../Components /Scroll';
-import ErrorBoundry from '../Components /ErrorBoundry'
+// import ErrorBoundry from '../Components /ErrorBoundry'  
 
 
 class App extends React.Component {
@@ -33,15 +33,14 @@ class App extends React.Component {
         const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         });
-      
         return (
             <div className="tc">
                 <h1 className='f1'>Robofriends</h1>
                 <SearchBox searchChange ={this.onSearchChange}/>
                 <Scroll>
-                    <ErrorBoundry>
+                    {/* <ErrorBoundry> */}
                         <CardList robots={filteredRobots}/>
-                    </ErrorBoundry>
+                    {/* </ErrorBoundry> */}
                 </Scroll>
             </div>
         )
