@@ -1,7 +1,11 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({robots,}) => {
+const CardList = ({robots}) => {
+    //// ERROR BOUNDRY IN USE 
+    // if (true) {
+    //     throw new Error("NOOOOOOOOO!");
+    // }
     const cardArray = robots.map( user => {
         return (
             <Card 

@@ -3,6 +3,7 @@ import CardList from '../Components /CardList';
 // import {robots} from './robots'; no needed after fetching user data
 import SearchBox from '../Components /SearchBox';
 import Scroll from '../Components /Scroll';
+import ErrorBoundry from '../Components /ErrorBoundry'
 
 
 class App extends React.Component {
@@ -40,7 +41,9 @@ class App extends React.Component {
                     <h1 className='f1'>Robofriends</h1>
                     <SearchBox searchChange ={this.onSearchChange}/>
                     <Scroll>
-                        <CardList robots={filteredRobots}/>
+                        <ErrorBoundry>
+                            <CardList robots={filteredRobots}/>
+                        </ErrorBoundry>
                     </Scroll>
                 </div>
             )
